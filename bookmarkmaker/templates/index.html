@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     {% load static %}
-    
+    {% load custom_filter %}
 
 
 <body>
@@ -40,7 +40,7 @@
                     
                         {% for each in data %}
                             <tr>
-                                <td>{{each.site_name}}</td>
+                                <td>{{each.site_name | add:".com " }}</td>
                                 <td><a href="https://{{each.site_url}}" target="_blank"><button class='btn btn-primary'>Visit Site</button></a></td>
                             </tr>
                         {% endfor %}
