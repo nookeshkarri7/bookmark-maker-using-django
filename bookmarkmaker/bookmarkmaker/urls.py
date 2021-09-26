@@ -18,5 +18,7 @@ from django.urls import path
 from bookmarkmakerapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",views.bookmarkMaker)
+    path("",views.bookmarkMaker),
+    path("/update/(?P<id>\d+)/$",views.update_bookmark),
+    path("/delete/(?P<id>\d+)/$",views.delete_bookmark)
 ]
