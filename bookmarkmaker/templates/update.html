@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    {% load custom_filter %}
+
+
+<body>
+    {% block title %}Nookesh {% endblock %}
+    {% block content %}
+    <div class="bgContainerblue">
+        
+        <div clas="container">
+            <div class="row">
+                <div class="d-flex flex-column justify-content-center bookmarkCard col-9 text-center">
+                    <h1 class="heading">Update the Bookmark Details</h1>
+                    <div class="innerform">
+                        <form method="POST">
+                            <div>
+                                {{form.as_p}}
+                                {% csrf_token %}
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="backg btn btn-dark" id="submitBtn">Submit</button>
+                            </div>
+                        </form>
+                    </div>    
+            
+                </div>
+               
+        </div>
+            <div>
+                
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
