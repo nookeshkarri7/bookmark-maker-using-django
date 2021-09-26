@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from . import forms
 from bookmarkmakerapp.models import bookmarkMakertable
 def bookmarkMaker(request):
@@ -13,6 +13,11 @@ def bookmarkMaker(request):
 
 def update_bookmark(request,id):
     eachdata=bookmarkMakertable.objects.get(id=id)
+    if request.method=="POST":
+        form=forms.bookmarkMakerForm(request.POST,instance=eachdata)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
     return render(request,'update.html',{"form":eachdata})
 
 

@@ -7,9 +7,5 @@ class bookmarkMakerForm(forms.ModelForm):
         model=bookmarkMakertable
         fields="__all__"
 
-    def clean(self):
-        cleaned_data=super().clean()
-        url=cleaned_data['site_url']
-        if url[-4:]!=".com":
-            raise forms.ValidationError("Please Enter Valid URL")
-        return url
+    
+    

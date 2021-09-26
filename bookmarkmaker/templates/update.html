@@ -17,7 +17,8 @@
                     <div class="innerform">
                         <form method="POST">
                             <div>
-                                {{form.as_p}}
+                                Site Name :<input type='text' name='site_name' value='{{form.site_name}}'/>
+                                Site URL :<input type='text' name='site_url' value='{{form.site_url}}'/>
                                 {% csrf_token %}
                             </div>
                             <div class="text-right">

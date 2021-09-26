@@ -42,6 +42,9 @@
                             <tr>
                                 <td>{{each.site_name | add:".com " }}</td>
                                 <td><a href="https://{{each.site_url}}" target="_blank"><button class='btn btn-primary'>Visit Site</button></a></td>
+                                <td><a href="delete/{{each.id}}"><button class='btn btn-warning'>Delete</button></a>
+                                &nbsp;&nbsp;<a href="update/{{each.id}}"><button class='btn btn-warning'>Update</button></a>
+                                </td>
                             </tr>
                         {% endfor %}
                     </table>
