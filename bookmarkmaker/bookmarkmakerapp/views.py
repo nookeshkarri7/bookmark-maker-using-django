@@ -11,4 +11,8 @@ def bookmarkMaker(request):
             form=forms.bookmarkMakerForm()
     return render(request, "index.html",{"form":form,"data":data})
 
+def update_bookmark(request,id):
+    eachdata=bookmarkMakertable.objects.get(id=id)
+    return render(request,'update.html',{"form":eachdata})
+
 
