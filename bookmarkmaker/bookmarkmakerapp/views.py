@@ -16,3 +16,10 @@ def update_bookmark(request,id):
     return render(request,'update.html',{"form":eachdata})
 
 
+def delete_bookmark(request,id):
+    eachdata=bookmarkMakertable.objects.get(id=id)
+    eachdata.delete()
+    return redirect("/")
+    
+
+
